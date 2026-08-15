@@ -308,13 +308,12 @@
       text-transform: uppercase;
     }
 
-    /* REVEAL */
+    /* REVEALS */
 
     .reveal,
     .reveal-left,
     .reveal-right {
       opacity: 0;
-
       transition:
         opacity .9s ease,
         transform .9s ease;
@@ -429,7 +428,6 @@
       left: 9%;
       bottom: 55px;
       z-index: 2;
-
       max-width: 470px;
     }
 
@@ -711,6 +709,13 @@
       line-height: 1.55;
     }
 
+    .review-feature strong,
+    .review-small strong {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
     .review-small-stack {
       display: flex;
       flex-direction: column;
@@ -772,14 +777,19 @@
     .hours-row {
       display: flex;
       justify-content: space-between;
-
       padding: 18px 0;
-
       border-bottom: 1px solid rgba(255,255,255,.1);
     }
 
     .hours-row span:last-child {
       color: var(--grey);
+    }
+
+    .hours-note {
+      margin-top: 20px;
+      color: #777;
+      font-size: 11px;
+      line-height: 1.7;
     }
 
     /* CONTACT */
@@ -807,6 +817,16 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       margin-bottom: 8px;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .contact-item a:hover {
+      color: var(--gold);
     }
 
     .contact-image-wrap {
@@ -848,6 +868,13 @@
       font-size: 32px;
     }
 
+    .contact-box span {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
     /* FOOTER */
 
     footer {
@@ -855,6 +882,7 @@
 
       display: flex;
       justify-content: space-between;
+      gap: 20px;
 
       border-top: 1px solid rgba(255,255,255,.08);
 
@@ -867,6 +895,8 @@
       font-size: 25px;
       color: white;
     }
+
+    /* FLOATING MOBILE CALL */
 
     .floating-call {
       display: none;
@@ -884,7 +914,13 @@
 
       text-align: center;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      box-shadow: 0 12px 35px rgba(0,0,0,.5);
     }
+
+    /* TABLET */
 
     @media (max-width: 950px) {
 
@@ -897,6 +933,7 @@
         padding: 30px;
 
         flex-direction: column;
+        align-items: flex-start;
 
         background: #080808;
 
@@ -907,6 +944,11 @@
       .nav-links.open {
         opacity: 1;
         visibility: visible;
+      }
+
+      .nav-button {
+        width: 100%;
+        text-align: center;
       }
 
       .menu-button {
@@ -935,6 +977,7 @@
       .service-small:nth-child(2) img {
         width: 100%;
         height: 380px;
+        margin-left: 0;
       }
 
       .gallery-collage {
@@ -965,6 +1008,7 @@
         position: relative;
         top: auto;
         right: auto;
+
         margin: 30px 0;
       }
 
@@ -974,8 +1018,10 @@
 
       .hours-photo img {
         position: relative;
+
         width: 100%;
         height: 470px;
+
         left: 0;
         top: 0;
       }
@@ -987,7 +1033,17 @@
       .statement {
         background-attachment: scroll;
       }
+
+      .contact-image-main {
+        right: 0;
+      }
+
+      .contact-box {
+        left: 0;
+      }
     }
+
+    /* MOBILE */
 
     @media (max-width: 650px) {
 
@@ -999,8 +1055,42 @@
         padding: 90px 6%;
       }
 
+      nav {
+        height: 72px;
+      }
+
+      nav.scrolled {
+        height: 62px;
+      }
+
+      .logo {
+        font-size: 25px;
+      }
+
+      .hero {
+        min-height: 760px;
+        padding: 120px 6% 85px;
+      }
+
+      .hero-image {
+        background-position: 62% center;
+      }
+
+      .hero-overlay {
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.67)
+          );
+      }
+
       h1 {
         font-size: clamp(68px, 21vw, 100px);
+      }
+
+      .hero p {
+        font-size: 15px;
       }
 
       .hero-buttons {
@@ -1021,6 +1111,25 @@
         margin-left: 0;
       }
 
+      .service-feature {
+        min-height: 540px;
+      }
+
+      .service-feature-content {
+        left: 30px;
+        right: 25px;
+        bottom: 35px;
+      }
+
+      .service-feature-content h3 {
+        font-size: 55px;
+      }
+
+      .service-small img,
+      .service-small:nth-child(2) img {
+        height: 330px;
+      }
+
       .about-image-wrap {
         height: 500px;
       }
@@ -1033,6 +1142,10 @@
         height: 220px;
       }
 
+      .stats {
+        gap: 30px;
+      }
+
       .statement-inner {
         margin-left: 0;
       }
@@ -1041,12 +1154,43 @@
         margin-left: 0;
       }
 
+      .gallery-collage img {
+        height: 320px;
+      }
+
+      .gallery-collage img:first-child {
+        height: 430px;
+      }
+
       .review-feature {
+        min-height: 430px;
         padding: 38px;
+      }
+
+      .review-feature p {
+        font-size: 22px;
       }
 
       .review-small:nth-child(2) {
         margin-left: 0;
+      }
+
+      .hours-row {
+        font-size: 14px;
+      }
+
+      .contact-image-wrap {
+        min-height: 500px;
+      }
+
+      .contact-image-main {
+        width: 95%;
+        height: 440px;
+      }
+
+      .contact-box {
+        width: 230px;
+        padding: 24px;
       }
 
       .floating-call {
@@ -1064,6 +1208,8 @@
 
 <body>
 
+  <!-- NAV -->
+
   <nav id="navbar">
 
     <a href="#home" class="logo">
@@ -1071,6 +1217,7 @@
     </a>
 
     <div class="nav-links" id="navLinks">
+
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -1081,6 +1228,7 @@
       <a href="tel:+353868108162" class="nav-button">
         Call Now
       </a>
+
     </div>
 
     <div class="menu-button" id="menuButton">
@@ -1088,6 +1236,8 @@
     </div>
 
   </nav>
+
+  <!-- HERO -->
 
   <header class="hero" id="home">
 
@@ -1134,6 +1284,8 @@
 
   </header>
 
+  <!-- INTRO -->
+
   <section class="intro">
 
     <div class="intro-inner">
@@ -1164,6 +1316,8 @@
     </div>
 
   </section>
+
+  <!-- SERVICES -->
 
   <section class="services" id="services">
 
@@ -1230,7 +1384,7 @@
 
           <img
             src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=90"
-            alt="Beard trimming"
+            alt="Beard trim"
           >
 
           <h3>Beard Work</h3>
@@ -1247,6 +1401,8 @@
     </div>
 
   </section>
+
+  <!-- ABOUT -->
 
   <section id="about">
 
@@ -1315,6 +1471,8 @@
 
   </section>
 
+  <!-- STATEMENT -->
+
   <section class="statement">
 
     <div class="statement-inner reveal">
@@ -1336,6 +1494,8 @@
     </div>
 
   </section>
+
+  <!-- GALLERY -->
 
   <section class="gallery" id="gallery">
 
@@ -1394,6 +1554,8 @@
 
   </section>
 
+  <!-- REAL REVIEWS -->
+
   <section class="reviews" id="reviews">
 
     <div class="reveal">
@@ -1418,12 +1580,13 @@
         </div>
 
         <p>
-          “Great service, friendly atmosphere and a really clean,
-          professional cut.”
+          “I’ve been coming here since 2025, and Ali has always been
+          excellent. He’s very kind, professional, and consistently
+          does a great job. Highly recommended.”
         </p>
 
         <strong>
-          Google Customer
+          Harshal Agashe
         </strong>
 
       </div>
@@ -1437,11 +1600,14 @@
           </div>
 
           <p>
-            Excellent attention to detail and always
-            a great haircut.
+            “Had my hair done today from Ali, really friendly fella.
+            Haircut was exactly how I liked it and he took the time
+            to make sure I was happy with it.”
           </p>
 
-          <strong>Google Customer</strong>
+          <strong>
+            Stephen Gill
+          </strong>
 
         </div>
 
@@ -1452,11 +1618,14 @@
           </div>
 
           <p>
-            Welcoming barbers, great service and
-            consistently sharp results.
+            “Ali is incredibly friendly, professional, and clearly
+            very skilled at what he does. His attention to detail
+            shows real experience, and the haircut I got was top class.”
           </p>
 
-          <strong>Google Customer</strong>
+          <strong>
+            Ahtesam Uddin
+          </strong>
 
         </div>
 
@@ -1465,6 +1634,8 @@
     </div>
 
   </section>
+
+  <!-- HOURS -->
 
   <section class="hours" id="hours">
 
@@ -1529,6 +1700,11 @@
 
         </div>
 
+        <p class="hours-note">
+          Opening hours can change on bank holidays.
+          Call the shop if you want to confirm before travelling.
+        </p>
+
         <div style="margin-top:35px">
 
           <a href="tel:+353868108162" class="btn btn-gold">
@@ -1542,6 +1718,8 @@
     </div>
 
   </section>
+
+  <!-- CONTACT -->
 
   <section id="contact">
 
@@ -1596,6 +1774,14 @@
 
         </div>
 
+        <div style="margin-top:35px">
+
+          <a href="tel:+353868108162" class="btn btn-gold">
+            Call Now
+          </a>
+
+        </div>
+
       </div>
 
       <div class="contact-image-wrap reveal-right">
@@ -1627,6 +1813,8 @@
 
   </section>
 
+  <!-- FOOTER -->
+
   <footer>
 
     <div class="footer-logo">
@@ -1643,6 +1831,8 @@
 
   </footer>
 
+  <!-- MOBILE CALL -->
+
   <a
     href="tel:+353868108162"
     class="floating-call"
@@ -1651,6 +1841,8 @@
   </a>
 
   <script>
+
+    /* SCROLL REVEALS */
 
     const revealElements =
       document.querySelectorAll(
@@ -1683,6 +1875,8 @@
     });
 
 
+    /* NAV SHRINK */
+
     const navbar =
       document.getElementById("navbar");
 
@@ -1699,6 +1893,8 @@
       }
     );
 
+
+    /* HERO PARALLAX */
 
     const heroImage =
       document.getElementById("heroImage");
@@ -1722,6 +1918,8 @@
       }
     );
 
+
+    /* MOBILE MENU */
 
     const menuButton =
       document.getElementById("menuButton");
@@ -1761,11 +1959,7 @@
       });
 
 
-    /*
-      EXTRA PROTECTION:
-      If any remote image fails, hide it instead of
-      showing the ugly broken-image icon and alt text.
-    */
+    /* HIDE BROKEN EXTERNAL IMAGES */
 
     document
       .querySelectorAll("img")
