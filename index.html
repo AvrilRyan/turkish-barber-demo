@@ -53,8 +53,8 @@
     }
 
     img {
-      display: block;
       width: 100%;
+      display: block;
     }
 
     section {
@@ -74,7 +74,6 @@
       font-family: "Bebas Neue", sans-serif;
       font-size: clamp(52px, 7vw, 92px);
       line-height: .92;
-      letter-spacing: 1px;
     }
 
     .section-description {
@@ -150,7 +149,6 @@
       font-family: "Bebas Neue", sans-serif;
       font-size: 30px;
       letter-spacing: 2px;
-      white-space: nowrap;
     }
 
     .logo span {
@@ -190,7 +188,6 @@
       display: none;
       font-size: 27px;
       cursor: pointer;
-      user-select: none;
     }
 
     /* HERO */
@@ -199,8 +196,10 @@
       min-height: 100vh;
       height: 100vh;
       position: relative;
+
       display: flex;
       align-items: center;
+
       padding: 120px 7% 60px;
       overflow: hidden;
     }
@@ -221,6 +220,7 @@
       from {
         transform: scale(1.15);
       }
+
       to {
         transform: scale(1.04);
       }
@@ -240,19 +240,6 @@
         );
     }
 
-    .hero-overlay::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at 76% 45%,
-          rgba(203,166,94,.14),
-          transparent 38%
-        );
-    }
-
     .hero-content {
       position: relative;
       z-index: 2;
@@ -266,6 +253,7 @@
         opacity: 0;
         transform: translateY(55px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -320,41 +308,16 @@
       text-transform: uppercase;
     }
 
-    .scroll-indicator {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      z-index: 3;
-
-      transform: translateX(-50%);
-
-      font-size: 10px;
-      letter-spacing: 4px;
-      opacity: .6;
-
-      animation: scrollPulse 1.8s infinite;
-    }
-
-    @keyframes scrollPulse {
-      0%,100% {
-        transform: translate(-50%,0);
-        opacity: .4;
-      }
-      50% {
-        transform: translate(-50%,8px);
-        opacity: 1;
-      }
-    }
-
     /* REVEAL */
 
     .reveal,
     .reveal-left,
     .reveal-right {
       opacity: 0;
+
       transition:
-        opacity .9s cubic-bezier(.2,.7,.2,1),
-        transform .9s cubic-bezier(.2,.7,.2,1);
+        opacity .9s ease,
+        transform .9s ease;
     }
 
     .reveal {
@@ -398,10 +361,6 @@
       color: rgba(203,166,94,.16);
     }
 
-    .intro-copy {
-      max-width: 800px;
-    }
-
     .intro-copy p {
       margin-top: 26px;
       max-width: 690px;
@@ -428,7 +387,6 @@
       grid-template-columns: 1.2fr .8fr;
 
       gap: 80px;
-      align-items: start;
     }
 
     .service-feature {
@@ -441,9 +399,11 @@
     .service-feature img {
       position: absolute;
       inset: 0;
+
       width: 100%;
       height: 100%;
       object-fit: cover;
+
       transition: transform 1s ease;
     }
 
@@ -469,6 +429,7 @@
       left: 9%;
       bottom: 55px;
       z-index: 2;
+
       max-width: 470px;
     }
 
@@ -493,10 +454,6 @@
       flex-direction: column;
       gap: 80px;
       padding-top: 45px;
-    }
-
-    .service-small {
-      position: relative;
     }
 
     .service-small img {
@@ -531,11 +488,6 @@
 
     /* ABOUT */
 
-    .about {
-      position: relative;
-      overflow: hidden;
-    }
-
     .about-grid {
       display: grid;
       grid-template-columns: .95fr 1.05fr;
@@ -546,7 +498,6 @@
     .about-image-wrap {
       position: relative;
       height: 700px;
-      margin-left: 6%;
     }
 
     .about-image-main {
@@ -560,10 +511,8 @@
 
     .about-image-main img {
       width: 100%;
-      height: 115%;
+      height: 100%;
       object-fit: cover;
-      position: absolute;
-      top: -7%;
     }
 
     .about-image-small {
@@ -572,19 +521,14 @@
       height: 290px;
       right: -4%;
       bottom: 0;
-      overflow: hidden;
 
+      overflow: hidden;
       border: 10px solid var(--black);
     }
 
     .about-image-small img {
-      width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .about-text {
-      padding-top: 60px;
     }
 
     .about-text p {
@@ -596,21 +540,18 @@
 
     .stats {
       margin-top: 50px;
-
       display: flex;
       gap: 60px;
     }
 
     .stat strong {
       display: block;
-
       font-family: "Bebas Neue", sans-serif;
       font-size: 58px;
       color: var(--gold);
     }
 
     .stat span {
-      display: block;
       color: var(--grey);
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -621,9 +562,6 @@
 
     .statement {
       min-height: 650px;
-
-      position: relative;
-      overflow: hidden;
 
       display: flex;
       align-items: center;
@@ -638,10 +576,7 @@
     }
 
     .statement-inner {
-      position: relative;
-      z-index: 2;
       margin-left: 18%;
-      text-align: left;
     }
 
     .statement h2 {
@@ -667,7 +602,7 @@
     .gallery {
       background: #090909;
       overflow: hidden;
-      padding-bottom: 40px;
+      padding-bottom: 80px;
     }
 
     .gallery-header {
@@ -684,9 +619,7 @@
     .gallery-collage img {
       position: absolute;
       object-fit: cover;
-      transition:
-        transform .8s ease,
-        filter .5s ease;
+      transition: transform .8s ease;
     }
 
     .gallery-collage img:hover {
@@ -731,10 +664,9 @@
 
     .gallery-label {
       position: absolute;
-      z-index: 10;
-
       right: 11%;
       top: 405px;
+      z-index: 10;
 
       font-family: "Bebas Neue", sans-serif;
       font-size: 52px;
@@ -746,11 +678,6 @@
 
     .reviews {
       background: var(--black2);
-    }
-
-    .reviews-heading {
-      margin-left: 6%;
-      max-width: 850px;
     }
 
     .review-layout {
@@ -774,24 +701,14 @@
       justify-content: space-between;
     }
 
-    .review-feature .review-stars,
-    .review-small .review-stars {
+    .review-stars {
       color: var(--gold);
       letter-spacing: 4px;
-      font-size: 13px;
     }
 
     .review-feature p {
       font-size: clamp(23px, 3vw, 34px);
       line-height: 1.55;
-      max-width: 760px;
-    }
-
-    .review-feature strong,
-    .review-small strong {
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
     }
 
     .review-small-stack {
@@ -801,10 +718,10 @@
     }
 
     .review-small {
-      background: #121212;
       padding: 38px;
       min-height: 220px;
 
+      background: #121212;
       border: 1px solid rgba(255,255,255,.07);
     }
 
@@ -822,7 +739,6 @@
 
     .hours {
       background: #0b0b0b;
-      overflow: hidden;
     }
 
     .hours-wrap {
@@ -856,31 +772,17 @@
     .hours-row {
       display: flex;
       justify-content: space-between;
-      gap: 30px;
 
       padding: 18px 0;
 
       border-bottom: 1px solid rgba(255,255,255,.1);
-      color: #d7d2cb;
     }
 
     .hours-row span:last-child {
       color: var(--grey);
     }
 
-    .hours-note {
-      margin-top: 20px;
-      color: #757575;
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
     /* CONTACT */
-
-    .contact {
-      position: relative;
-      overflow: hidden;
-    }
 
     .contact-grid {
       display: grid;
@@ -889,13 +791,8 @@
       align-items: center;
     }
 
-    .contact-text {
-      margin-left: 6%;
-    }
-
     .contact-details {
       margin-top: 42px;
-      max-width: 590px;
     }
 
     .contact-item {
@@ -912,16 +809,6 @@
       margin-bottom: 8px;
     }
 
-    .contact-item p,
-    .contact-item a {
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .contact-item a:hover {
-      color: var(--gold);
-    }
-
     .contact-image-wrap {
       position: relative;
       min-height: 620px;
@@ -934,16 +821,13 @@
 
       width: 92%;
       height: 560px;
-
       overflow: hidden;
     }
 
     .contact-image-main img {
       width: 100%;
-      height: 115%;
+      height: 100%;
       object-fit: cover;
-      position: absolute;
-      top: -7%;
     }
 
     .contact-box {
@@ -962,14 +846,6 @@
       display: block;
       font-family: "Bebas Neue", sans-serif;
       font-size: 32px;
-      line-height: 1;
-    }
-
-    .contact-box span {
-      display: block;
-      margin-top: 10px;
-      font-size: 12px;
-      line-height: 1.6;
     }
 
     /* FOOTER */
@@ -977,33 +853,20 @@
     footer {
       padding: 48px 7%;
 
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
+      display: flex;
+      justify-content: space-between;
 
       border-top: 1px solid rgba(255,255,255,.08);
 
       color: #777;
       font-size: 11px;
-      letter-spacing: 1px;
     }
 
     .footer-logo {
       font-family: "Bebas Neue", sans-serif;
       font-size: 25px;
       color: white;
-      letter-spacing: 2px;
     }
-
-    footer div:nth-child(2) {
-      text-align: center;
-    }
-
-    footer div:nth-child(3) {
-      text-align: right;
-    }
-
-    /* FLOATING CALL */
 
     .floating-call {
       display: none;
@@ -1012,29 +875,18 @@
       left: 18px;
       right: 18px;
       bottom: 18px;
-
       z-index: 999;
 
       background: var(--gold);
       color: #111;
 
-      padding: 16px 20px;
+      padding: 16px;
 
       text-align: center;
       font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-
-      box-shadow: 0 12px 35px rgba(0,0,0,.5);
     }
 
-    /* MOBILE */
-
     @media (max-width: 950px) {
-
-      nav {
-        padding: 0 5%;
-      }
 
       .nav-links {
         position: absolute;
@@ -1042,31 +894,19 @@
         left: 0;
 
         width: 100%;
-
-        padding: 30px 5%;
+        padding: 30px;
 
         flex-direction: column;
-        align-items: flex-start;
-        gap: 25px;
 
-        background: rgba(7,7,7,.98);
+        background: #080808;
 
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-10px);
-
-        transition: .3s;
       }
 
       .nav-links.open {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
-      }
-
-      .nav-button {
-        width: 100%;
-        text-align: center;
       }
 
       .menu-button {
@@ -1082,20 +922,8 @@
         grid-template-columns: 1fr;
       }
 
-      .intro-inner {
-        gap: 25px;
-      }
-
-      .intro-number {
-        font-size: 100px;
-      }
-
       .service-feature {
         margin-left: 0;
-      }
-
-      .service-side {
-        padding-top: 0;
       }
 
       .service-small,
@@ -1106,25 +934,7 @@
       .service-small img,
       .service-small:nth-child(2) img {
         width: 100%;
-        height: 400px;
-        margin-left: 0;
-      }
-
-      .about-grid {
-        gap: 60px;
-      }
-
-      .about-image-wrap {
-        margin-left: 0;
-        height: 620px;
-      }
-
-      .statement {
-        background-attachment: scroll;
-      }
-
-      .statement-inner {
-        margin-left: 0;
+        height: 380px;
       }
 
       .gallery-collage {
@@ -1137,31 +947,25 @@
 
       .gallery-collage img {
         position: relative;
+
         width: 100%;
         height: 360px;
+
         left: auto;
         right: auto;
         top: auto;
       }
 
-      .gallery-collage img:nth-child(2),
-      .gallery-collage img:nth-child(4) {
+      .gallery-collage img:nth-child(even) {
         width: 82%;
         margin-left: auto;
       }
 
       .gallery-label {
         position: relative;
-        right: auto;
         top: auto;
-
+        right: auto;
         margin: 30px 0;
-
-        font-size: 46px;
-      }
-
-      .review-small:nth-child(2) {
-        margin-left: 0;
       }
 
       .hours-photo {
@@ -1177,73 +981,26 @@
       }
 
       .hours-info {
-        padding: 50px 0 0;
+        padding: 50px 0;
       }
 
-      .contact-text {
-        margin-left: 0;
-      }
-
-      .contact-image-wrap {
-        min-height: 560px;
-      }
-
-      .contact-image-main {
-        right: 0;
-        width: 92%;
-      }
-
-      .contact-box {
-        left: 0;
+      .statement {
+        background-attachment: scroll;
       }
     }
 
     @media (max-width: 650px) {
 
       body {
-        padding-bottom: 74px;
+        padding-bottom: 75px;
       }
 
       section {
         padding: 90px 6%;
       }
 
-      nav {
-        height: 72px;
-      }
-
-      nav.scrolled {
-        height: 62px;
-      }
-
-      .logo {
-        font-size: 25px;
-      }
-
-      .hero {
-        min-height: 760px;
-        padding: 120px 6% 85px;
-      }
-
-      .hero-image {
-        background-position: 62% center;
-      }
-
-      .hero-overlay {
-        background:
-          linear-gradient(
-            90deg,
-            rgba(0,0,0,.95),
-            rgba(0,0,0,.67)
-          );
-      }
-
       h1 {
         font-size: clamp(68px, 21vw, 100px);
-      }
-
-      .hero p {
-        font-size: 15px;
       }
 
       .hero-buttons {
@@ -1260,29 +1017,8 @@
       }
 
       .services-heading,
-      .gallery-header,
-      .reviews-heading,
-      .contact-text {
+      .gallery-header {
         margin-left: 0;
-      }
-
-      .service-feature {
-        min-height: 540px;
-      }
-
-      .service-feature-content {
-        left: 30px;
-        right: 25px;
-        bottom: 35px;
-      }
-
-      .service-feature-content h3 {
-        font-size: 55px;
-      }
-
-      .service-small img,
-      .service-small:nth-child(2) img {
-        height: 330px;
       }
 
       .about-image-wrap {
@@ -1290,79 +1026,37 @@
       }
 
       .about-image-main {
-        width: 88%;
         height: 430px;
       }
 
       .about-image-small {
-        width: 48%;
         height: 220px;
       }
 
-      .stats {
-        gap: 30px;
-      }
-
-      .stat strong {
-        font-size: 45px;
-      }
-
-      .statement {
-        min-height: 560px;
+      .statement-inner {
+        margin-left: 0;
       }
 
       .statement-small {
         margin-left: 0;
       }
 
-      .gallery-collage img {
-        height: 320px;
-      }
-
-      .gallery-collage img:first-child {
-        height: 430px;
-      }
-
       .review-feature {
-        min-height: 400px;
         padding: 38px;
       }
 
-      .review-feature p {
-        font-size: 23px;
-      }
-
-      .hours-row {
-        font-size: 14px;
-      }
-
-      .contact-image-wrap {
-        min-height: 500px;
-      }
-
-      .contact-image-main {
-        width: 95%;
-        height: 440px;
-      }
-
-      .contact-box {
-        width: 230px;
-        padding: 24px;
-      }
-
-      footer {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        text-align: center;
-      }
-
-      footer div:nth-child(3) {
-        text-align: center;
+      .review-small:nth-child(2) {
+        margin-left: 0;
       }
 
       .floating-call {
         display: block;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
       }
     }
   </style>
@@ -1377,7 +1071,6 @@
     </a>
 
     <div class="nav-links" id="navLinks">
-
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -1385,24 +1078,16 @@
       <a href="#hours">Hours</a>
       <a href="#contact">Contact</a>
 
-      <a
-        href="tel:+353868108162"
-        class="nav-button"
-      >
+      <a href="tel:+353868108162" class="nav-button">
         Call Now
       </a>
-
     </div>
 
-    <div
-      class="menu-button"
-      id="menuButton"
-    >
+    <div class="menu-button" id="menuButton">
       ☰
     </div>
 
   </nav>
-
 
   <header class="hero" id="home">
 
@@ -1427,10 +1112,7 @@
 
       <div class="hero-buttons">
 
-        <a
-          href="tel:+353868108162"
-          class="btn btn-gold"
-        >
+        <a href="tel:+353868108162" class="btn btn-gold">
           Call The Shop
         </a>
 
@@ -1450,12 +1132,7 @@
       Traditional Craft • Modern Style
     </div>
 
-    <div class="scroll-indicator">
-      SCROLL ↓
-    </div>
-
   </header>
-
 
   <section class="intro">
 
@@ -1488,7 +1165,6 @@
 
   </section>
 
-
   <section class="services" id="services">
 
     <div class="services-heading reveal">
@@ -1504,14 +1180,13 @@
 
     </div>
 
-
     <div class="services-layout">
 
       <div class="service-feature reveal-left">
 
         <img
           src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=1400&q=90"
-          alt="Haircut"
+          alt="Barber cutting hair"
         >
 
         <div class="service-feature-content">
@@ -1526,26 +1201,23 @@
 
           <p>
             Clean lines, fresh finishes and cuts built around
-            your style rather than a one-size-fits-all look.
+            your style.
           </p>
 
         </div>
 
       </div>
 
-
       <div class="service-side">
 
         <div class="service-small reveal-right">
 
           <img
-            src="https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=1000&q=90"
-            alt="Fade haircut"
+            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=90"
+            alt="Professional barber"
           >
 
-          <h3>
-            Modern Fades
-          </h3>
+          <h3>Modern Fades</h3>
 
           <p>
             Smooth transitions, crisp edges and a clean finish
@@ -1554,21 +1226,18 @@
 
         </div>
 
-
         <div class="service-small reveal-right">
 
           <img
             src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=90"
-            alt="Beard trim"
+            alt="Beard trimming"
           >
 
-          <h3>
-            Beard Work
-          </h3>
+          <h3>Beard Work</h3>
 
           <p>
-            Traditional shaping, detailing and beard care with
-            a sharp modern finish.
+            Traditional shaping and detailing for a sharp
+            modern finish.
           </p>
 
         </div>
@@ -1579,8 +1248,7 @@
 
   </section>
 
-
-  <section class="about" id="about">
+  <section id="about">
 
     <div class="about-grid">
 
@@ -1589,9 +1257,8 @@
         <div class="about-image-main">
 
           <img
-            class="parallax-img"
             src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1400&q=90"
-            alt="Barber shop"
+            alt="Barbershop interior"
           >
 
         </div>
@@ -1599,14 +1266,13 @@
         <div class="about-image-small">
 
           <img
-            src="https://images.unsplash.com/photo-1593702288056-f0a97e74c523?auto=format&fit=crop&w=800&q=90"
-            alt="Barber tools"
+            src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=800&q=90"
+            alt="Barber working"
           >
 
         </div>
 
       </div>
-
 
       <div class="about-text reveal-right">
 
@@ -1621,35 +1287,24 @@
 
         <p>
           A good haircut should do more than look good when
-          you leave the chair. It should feel right every day after.
+          you leave the chair.
         </p>
 
         <p>
           Turkish Barber Shop combines traditional barbering
-          techniques with modern men's styling in a relaxed,
-          welcoming setting in Loughlinstown.
+          with modern men's styling in Loughlinstown.
         </p>
 
         <div class="stats">
 
           <div class="stat">
-
             <strong>4.9★</strong>
-
-            <span>
-              Google rating
-            </span>
-
+            <span>Google Rating</span>
           </div>
 
           <div class="stat">
-
             <strong>68+</strong>
-
-            <span>
-              Google reviews
-            </span>
-
+            <span>Reviews</span>
           </div>
 
         </div>
@@ -1659,7 +1314,6 @@
     </div>
 
   </section>
-
 
   <section class="statement">
 
@@ -1683,7 +1337,6 @@
 
   </section>
 
-
   <section class="gallery" id="gallery">
 
     <div class="gallery-header reveal">
@@ -1697,13 +1350,7 @@
         No Two Looks.
       </h2>
 
-      <p class="section-description">
-        Traditional barbering, modern detail and a shop built
-        around the craft.
-      </p>
-
     </div>
-
 
     <div class="gallery-collage">
 
@@ -1715,26 +1362,26 @@
 
       <img
         class="gallery-two reveal"
-        src="https://images.unsplash.com/photo-1593702288056-f0a97e74c523?auto=format&fit=crop&w=1000&q=90"
-        alt="Barber tools"
+        src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=90"
+        alt="Beard styling"
       >
 
       <img
         class="gallery-three reveal"
         src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=1000&q=90"
-        alt="Haircut"
+        alt="Fresh haircut"
       >
 
       <img
         class="gallery-four reveal"
-        src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=90"
-        alt="Beard trim"
+        src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1100&q=90"
+        alt="Barbershop"
       >
 
       <img
         class="gallery-five reveal"
         src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=90"
-        alt="Barbershop"
+        alt="Classic barber shop"
       >
 
       <div class="gallery-label">
@@ -1747,10 +1394,9 @@
 
   </section>
 
-
   <section class="reviews" id="reviews">
 
-    <div class="reviews-heading reveal">
+    <div class="reveal">
 
       <div class="section-tag">
         Customer Reviews
@@ -1762,7 +1408,6 @@
       </h2>
 
     </div>
-
 
     <div class="review-layout">
 
@@ -1783,7 +1428,6 @@
 
       </div>
 
-
       <div class="review-small-stack">
 
         <div class="review-small reveal-right">
@@ -1797,12 +1441,9 @@
             a great haircut.
           </p>
 
-          <strong>
-            Google Customer
-          </strong>
+          <strong>Google Customer</strong>
 
         </div>
-
 
         <div class="review-small reveal-right">
 
@@ -1815,9 +1456,7 @@
             consistently sharp results.
           </p>
 
-          <strong>
-            Google Customer
-          </strong>
+          <strong>Google Customer</strong>
 
         </div>
 
@@ -1827,7 +1466,6 @@
 
   </section>
 
-
   <section class="hours" id="hours">
 
     <div class="hours-wrap">
@@ -1835,12 +1473,11 @@
       <div class="hours-photo reveal-left">
 
         <img
-          src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=90"
+          src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1300&q=90"
           alt="Barbershop interior"
         >
 
       </div>
-
 
       <div class="hours-info reveal-right">
 
@@ -1852,7 +1489,6 @@
           Walk In.<br>
           Walk Out Sharp.
         </h2>
-
 
         <div class="hours-list">
 
@@ -1893,17 +1529,9 @@
 
         </div>
 
-        <p class="hours-note">
-          Opening hours can change on bank holidays.
-          Call the shop if you want to confirm before travelling.
-        </p>
-
         <div style="margin-top:35px">
 
-          <a
-            href="tel:+353868108162"
-            class="btn btn-gold"
-          >
+          <a href="tel:+353868108162" class="btn btn-gold">
             Call The Shop
           </a>
 
@@ -1915,12 +1543,11 @@
 
   </section>
 
-
-  <section class="contact" id="contact">
+  <section id="contact">
 
     <div class="contact-grid">
 
-      <div class="contact-text reveal-left">
+      <div class="reveal-left">
 
         <div class="section-tag">
           Visit Us
@@ -1931,18 +1558,11 @@
           A Fresh Cut?
         </h2>
 
-        <p class="section-description">
-          Call the shop or visit us in Loughlinstown.
-        </p>
-
-
         <div class="contact-details">
 
           <div class="contact-item">
 
-            <small>
-              Address
-            </small>
+            <small>Address</small>
 
             <p>
               Unit 11, Loughlinstown Drive<br>
@@ -1951,12 +1571,9 @@
 
           </div>
 
-
           <div class="contact-item">
 
-            <small>
-              Phone
-            </small>
+            <small>Phone</small>
 
             <a href="tel:+353868108162">
               086 810 8162
@@ -1964,12 +1581,9 @@
 
           </div>
 
-
           <div class="contact-item">
 
-            <small>
-              Directions
-            </small>
+            <small>Directions</small>
 
             <a
               href="https://www.google.com/maps/search/?api=1&query=Turkish+Barber+Shop+Loughlinstown+Dublin"
@@ -1982,29 +1596,15 @@
 
         </div>
 
-
-        <div style="margin-top:35px">
-
-          <a
-            href="tel:+353868108162"
-            class="btn btn-gold"
-          >
-            Call Now
-          </a>
-
-        </div>
-
       </div>
-
 
       <div class="contact-image-wrap reveal-right">
 
         <div class="contact-image-main">
 
           <img
-            class="parallax-img"
-            src="https://images.unsplash.com/photo-1521490683712-35a1cb235d1c?auto=format&fit=crop&w=1300&q=90"
-            alt="Barber tools"
+            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=90"
+            alt="Professional barber"
           >
 
         </div>
@@ -2016,8 +1616,7 @@
           </strong>
 
           <span>
-            Unit 11, Loughlinstown Drive,
-            Dublin
+            Unit 11, Loughlinstown Drive, Dublin
           </span>
 
         </div>
@@ -2027,7 +1626,6 @@
     </div>
 
   </section>
-
 
   <footer>
 
@@ -2045,14 +1643,12 @@
 
   </footer>
 
-
   <a
     href="tel:+353868108162"
     class="floating-call"
   >
     ☎ Call Now • 086 810 8162
   </a>
-
 
   <script>
 
@@ -2070,7 +1666,6 @@
             if (entry.isIntersecting) {
 
               entry.target.classList.add("visible");
-
               observer.unobserve(entry.target);
 
             }
@@ -2091,22 +1686,18 @@
     const navbar =
       document.getElementById("navbar");
 
-    function updateNavbar() {
-
-      if (window.scrollY > 80) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-
-    }
-
     window.addEventListener(
       "scroll",
-      updateNavbar
-    );
+      () => {
 
-    updateNavbar();
+        if (window.scrollY > 80) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+      }
+    );
 
 
     const heroImage =
@@ -2116,8 +1707,7 @@
       "scroll",
       () => {
 
-        const y =
-          window.scrollY;
+        const y = window.scrollY;
 
         if (y < window.innerHeight) {
 
@@ -2133,59 +1723,6 @@
     );
 
 
-    const parallaxImages =
-      document.querySelectorAll(
-        ".parallax-img"
-      );
-
-    function updateParallax() {
-
-      const windowHeight =
-        window.innerHeight;
-
-      parallaxImages.forEach(image => {
-
-        const container =
-          image.parentElement;
-
-        const rect =
-          container.getBoundingClientRect();
-
-        if (
-          rect.bottom > 0 &&
-          rect.top < windowHeight
-        ) {
-
-          const progress =
-            (windowHeight - rect.top) /
-            (windowHeight + rect.height);
-
-          const movement =
-            (progress - .5) * 70;
-
-          const scale =
-            1.04 + progress * .03;
-
-          image.style.transform =
-            `translateY(${movement}px) scale(${scale})`;
-
-        }
-
-      });
-
-    }
-
-    window.addEventListener(
-      "scroll",
-      updateParallax,
-      {
-        passive: true
-      }
-    );
-
-    updateParallax();
-
-
     const menuButton =
       document.getElementById("menuButton");
 
@@ -2198,13 +1735,10 @@
 
         navLinks.classList.toggle("open");
 
-        if (
+        menuButton.textContent =
           navLinks.classList.contains("open")
-        ) {
-          menuButton.textContent = "✕";
-        } else {
-          menuButton.textContent = "☰";
-        }
+            ? "✕"
+            : "☰";
 
       }
     );
@@ -2219,7 +1753,6 @@
           () => {
 
             navLinks.classList.remove("open");
-
             menuButton.textContent = "☰";
 
           }
@@ -2228,34 +1761,26 @@
       });
 
 
-    document
-      .querySelectorAll(".service-small")
-      .forEach(
-        (item,index) => {
-          item.style.transitionDelay =
-            `${index * .12}s`;
-        }
-      );
-
+    /*
+      EXTRA PROTECTION:
+      If any remote image fails, hide it instead of
+      showing the ugly broken-image icon and alt text.
+    */
 
     document
-      .querySelectorAll(".review-small")
-      .forEach(
-        (item,index) => {
-          item.style.transitionDelay =
-            `${index * .12}s`;
-        }
-      );
+      .querySelectorAll("img")
+      .forEach(img => {
 
+        img.addEventListener(
+          "error",
+          () => {
 
-    document
-      .querySelectorAll(".gallery-collage img")
-      .forEach(
-        (item,index) => {
-          item.style.transitionDelay =
-            `${index * .08}s`;
-        }
-      );
+            img.style.display = "none";
+
+          }
+        );
+
+      });
 
   </script>
 
